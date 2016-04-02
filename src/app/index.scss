@@ -23,14 +23,45 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   height: 200px;
 
   img.pull-right {
-    width: 50px;
+  width: 50px;
   }
 }
+
+.vert-middle {
+  display: flex;
+  align-items: center;
+}
+
+.logoimage {
+  height: 12em;
+  
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color:#091;  
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+
+.jumbotron {
+  background: #eee;
+}
+
+
 
 // Push the body down for the fixed navbar
 body {
   padding-top: 50px;
 }
+
+
 
 
 /**
