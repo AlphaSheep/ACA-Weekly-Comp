@@ -164,9 +164,16 @@
   		        <h4>{{event.event}}</h4>
 	  		    <ol class="scramble-list">
 	  		        <li ng-repeat="thisScramble in event.scrambles">
-	  		            {{thisScramble}}
-	 		        </li> 
+	  		           <span>{{thisScramble | cleanScramble}}</span>
+  		           </li> 
 	  		    </ol>
+	  		    
+	  		    <div class="input-group">
+	  		       <input type="text" class="form-control" placeholder="Times..."/>
+	  		       <span class="input-group-btn">
+	  		           <button class="btn btn-primary">Submit {{event.event}} times</button>
+	  		       </span>
+  		       </div>
 
                 <hr/>
             </div>

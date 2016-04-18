@@ -63,11 +63,17 @@ body {
 
 .scramble-list li {
 	padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+.scramble-list li span {
+	white-space: pre-wrap;
 }
 
 .event-select {
     padding-bottom: 1em;
 }
+
 
 
 /**
