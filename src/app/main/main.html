@@ -28,12 +28,153 @@
 
 <div class="container">
   
-  <div class="row">
-    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-      <div class="well text-center">
-        Coming eventualy to an internet near you.
-      </div>
+  <div class="row" ng-controller="CompController as comp">
+   
+  	<div class="col-xs-12 col-lg-3">
+  	  <div class="panel panel-default">
+  	  
+  		  <div class="panel-heading centre-panel-heading">
+  		  	<h4>Select Your Events</h4>
+  		  </div>
+  		  
+  		  <div class="panel-body">
+		    
+		    <div class="event-select col-xs-6 col-md-3 col-lg-12">
+		
+		      <h4>NxNxN Cubes</h4>
+		     		     
+		      
+		      <div class="btn-group btn-block btn-group-vertical cube-buttons" data-toggle="buttons">
+		  		<label class="btn btn-default btn-social">
+		  		    <span class="cubing-icon event-222"></span> 2x2
+		          	<input type="checkbox">            	
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-333"></span> 3x3
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-444"></span> 4x4
+		    		<input type="checkbox"> 
+		  		</label>  		
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-555"></span> 5x5
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-666"></span> 6x6
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-777"></span> 7x7
+		    		<input type="checkbox"> 
+		  		</label>
+		   	  </div>      
+		      
+		    </div>
+		    
+		    <div class="event-select col-xs-6 col-md-3 col-lg-12">
+		
+		      <h4>Other puzzles</h4>
+		      
+		      <div class="btn-group btn-block btn-group-vertical cube-buttons" data-toggle="buttons">
+		  		<label class="btn btn-block btn-default btn-social">
+		  		    <span class="cubing-icon event-pyram"></span> Pyraminx
+		          	<input type="checkbox">            	
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-minx"></span> Megaminx
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-skewb"></span> Skewb
+		    		<input type="checkbox"> 
+		  		</label>  		
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-sq1"></span> Square-1
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-clock"></span> Rubik's Clock
+		    		<input type="checkbox"> 
+		  		</label>
+		   	  </div>  
+		   	      
+		    </div>
+		  	
+		  	<div class="clearfix visible-xs-block visible-sm-block"></div>
+		    
+		    <div class="event-select col-xs-6 col-md-3 col-lg-12">
+		
+		      <h4>Blindfolded Events</h4>
+		      
+		      <div class="btn-group btn-block btn-group-vertical cube-buttons" data-toggle="buttons">
+		  		<label class="btn btn-block btn-default btn-social">
+		  		    <span class="cubing-icon event-333bf"></span> 3x3 Blindfolded
+		          	<input type="checkbox">            	
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-444bf"></span> 4x4 Blindfolded
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-555bf"></span> 5x5 Blindfolded
+		    		<input type="checkbox"> 
+		  		</label>  		
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-333mbf"></span> 3x3 Multiple Blindfolded
+		    		<input type="checkbox"> 
+		  		</label>  		
+		   	  </div>  
+		      
+		    </div>
+	    	    
+		  	<div class="event-select col-xs-6 col-md-3 col-lg-12">
+		
+		      <h4>3x3 Variants</h4>
+		      
+		      <div class="btn-group btn-block btn-group-vertical cube-buttons" data-toggle="buttons">
+		  		<label class="btn btn-block btn-default btn-social">
+		  		    <span class="cubing-icon event-333oh"></span> 3x3 One-Handed
+		          	<input type="checkbox">            	
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-333ft"></span> 3x3 with Feet
+		    		<input type="checkbox"> 
+		  		</label>
+		  		<label class="btn btn-default btn-social">
+		  			<span class="cubing-icon event-333fm"></span> Fewest Moves
+		    		<input type="checkbox"> 
+		  		</label>  		
+		   	  </div>  
+		      
+		    </div>
+	      </div>
+	  </div>
     </div>
+    
+    <div class="col-xs-12 col-lg-9"> 
+  	  <div class="panel panel-default">
+  		  <div class="panel-heading centre-panel-heading">
+  		  	<h4>Time Entry</h4>
+  		  </div>
+  		  
+  		  <div class="panel-body">
+  		    <div ng-repeat="event in comp.scrambles">
+  		        <h4>{{event.event}}</h4>
+	  		    <ol class="scramble-list">
+	  		        <li ng-repeat="thisScramble in event.scrambles">
+	  		            {{thisScramble}}
+	 		        </li> 
+	  		    </ol>
+
+                <hr/>
+            </div>
+  		  </div>
+  		  
+      </div>    	
+    </div>
+    
   </div>
 
 </div> 

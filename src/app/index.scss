@@ -27,11 +27,6 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   }
 }
 
-.vert-middle {
-  display: flex;
-  align-items: center;
-}
-
 .logoimage {
   height: 12em;
   
@@ -54,6 +49,10 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   background: #eee;
 }
 
+.centre-panel-heading {
+	text-align:center;
+}
+
 
 
 // Push the body down for the fixed navbar
@@ -62,6 +61,13 @@ body {
 }
 
 
+.scramble-list li {
+	padding-bottom: 1em;
+}
+
+.event-select {
+    padding-bottom: 1em;
+}
 
 
 /**
