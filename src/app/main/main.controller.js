@@ -1,15 +1,16 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('acaWeeklyComp')
-    .controller('MainController', MainController);
+    angular
+        .module('acaWeeklyComp')
+        .controller('MainController', MainController);
 
-  /** @ngInject */
-  function MainController() {
-	  
-      // var vm = this;
-      
+    /** @ngInject */
+    function MainController($log, eventsFactory) {
 
-  }
+        // var vm = this;
+        $log.log(eventsFactory.getEvents());
+        $log.log(eventsFactory.getEventsForCategory('NxNxN'));
+
+    }
 })();
