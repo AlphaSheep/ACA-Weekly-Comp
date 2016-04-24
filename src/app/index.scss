@@ -1,7 +1,11 @@
+
 /**
  *  If you want to override some bootstrap variables, you have to change values here.
  *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
  */
+ 
+ 
+ 
 $navbar-inverse-link-color: #5AADBB;
 $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
@@ -37,7 +41,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-  color:#091;  
+  color:#fa3;  
 }
 
 .navbar-inverse .navbar-brand {
