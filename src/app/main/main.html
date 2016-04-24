@@ -25,11 +25,13 @@
   </div> 
 </div>   
 
-
-<div class="container">
+<div class="container" ng-controller="CompController as comp">
   
-  <div class="row" ng-controller="CompController as comp">
-   
+    <div class="alert alert-danger" ng-If="!comp.hasScrambles">
+        <strong>ERROR:</strong> Could not connect to the database to retrieve scrambles. Please try again later. If the problem persists, please report it.
+    </div>
+  <div class="row" ng-If="comp.hasScrambles">
+  
   	<div class="col-xs-12 col-lg-3">
   	  <div class="panel panel-default">
   	  
@@ -152,6 +154,8 @@
 	      </div>
 	  </div>
     </div>
+    
+
     
     <div class="col-xs-12 col-lg-9"> 
   	  <div class="panel panel-default">

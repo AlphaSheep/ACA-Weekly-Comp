@@ -1,26 +1,28 @@
 (function() {
-  'use strict';
-  
-  angular
-    .module('acaWeeklyComp')
-    .controller('CompController', CompController);
+    'use strict';
 
-  /** @ngInject */
-  function CompController(ScrambleFactory) {
-    var vm = this;  
-      
-    vm.testString = 'This is a test';
-    
+    angular
+        .module('acaWeeklyComp')
+        .controller('CompController', CompController);
 
-      ScrambleFactory.getScrambles().query(function(response) {
-          vm.scrambles = response;
-          console.log(response);
-      },
-       function(error) {
-          vm.scrambles = error;
-          console.log(error);
-          
-      });
-      
-  }
+    /** @ngInject */
+    function CompController($log, ScrambleFactory) {
+        var vm = this;  
+
+        vm.testString = 'This is a test';
+        vm.hasScrambles   = false;
+        
+        vm.potato = false;
+
+        ScrambleFactory.getScrambles().query(function(response) {
+            vm.scrambles = response;
+            vm.hasScrambles = true;
+            $log.log(response)
+        }, function(error) {
+            vm.error = error;
+            $log.log(error)
+            
+        });
+
+    }
 })();
