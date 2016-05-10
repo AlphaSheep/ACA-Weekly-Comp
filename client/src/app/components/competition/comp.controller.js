@@ -11,6 +11,7 @@
 
         vm.testString = 'This is a test';
         vm.hasScrambles   = false;
+        vm.isLoading   = true;
         
         vm.potato = false;
 
@@ -18,7 +19,9 @@
             vm.scrambles = response;
             vm.hasScrambles = true;
             $log.log(response)
+            vm.isLoading   = false;
         }, function(error) {
+            vm.isLoading   = false;
             vm.error = error;
             $log.log(error)
             

@@ -26,9 +26,13 @@
 </div>   
 
 <div class="container" ng-controller="CompController as comp">
-  
-    <div class="alert alert-danger" ng-If="!comp.hasScrambles">
-        <strong>ERROR:</strong> Could not connect to the database to retrieve scrambles. Please try again later. If the problem persists, please report it.
+    <div ng-If="!comp.hasScrambles">
+        <div class="alert alert-info" ng-If="comp.isLoading">
+            Fetching this week's scrambles. Please wait...
+        </div>
+        <div class="alert alert-danger" ng-If="!comp.isLoading">
+            <strong>ERROR:</strong> Could not connect to the server to retrieve scrambles. Please try again later. If the problem persists, please report it.
+        </div>
     </div>
   <div class="row" ng-If="comp.hasScrambles">
   
