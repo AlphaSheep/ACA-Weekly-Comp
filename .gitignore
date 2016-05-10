@@ -8,4 +8,5 @@ dist/
 *~
 build/
 
-server/scrambles/
+database/scrambles/
+database/data
