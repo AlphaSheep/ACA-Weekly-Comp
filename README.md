@@ -1,2 +1,3 @@
 # ACA-Weekly-Comp
-A web front end for the weekly competition run through the African Cubing Competion
+
+This is intended to one day become a replacement for the weekly competition that was at one stage run through the African Cubing Association's facebook page.
